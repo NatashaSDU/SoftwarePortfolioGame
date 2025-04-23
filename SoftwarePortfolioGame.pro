@@ -8,10 +8,12 @@ SOURCES += \
         Enemy.cpp \
         Hero.cpp \
         Opponent.cpp \
+        Utility.cpp \
         main.cpp
 
 HEADERS += \
     DataAccess.h \
     Enemy.h \
     Hero.h \
-    Opponent.h
+    Opponent.h \
+    Utility.h
