@@ -3,12 +3,15 @@
 #include "Opponent.h"
 #include <string>
 
-class Hero: public Opponent{
+class Hero : public Opponent {
 private:
     const std::string name;
-
+    int level;
+    int xp;
+    int baseHP;
 public:
-    Hero(const std::string& _name, int _hp, int _attack);
-
+    Hero(const std::string& _name, int _level, int _xp);
+    int maximumXP() const;
+    void gainXP(int _addedXP);
 };
 #endif // HERO_H

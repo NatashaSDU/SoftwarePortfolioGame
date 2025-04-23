@@ -1,23 +1,25 @@
 #include "Hero.h"
 
-Hero::Hero(const std::string& _name,int _level, int _attack, int _xp): Opponent(_attack,getHP()),name(_name), level(_level), xp(_xp){
-
+Hero::Hero(const std::string& _name, int _level, int _xp): Opponent(2+_level, (10 + (_level - 1) * 2)),
+    name(_name),
+    level(_level),
+    xp(_xp),
+    baseHP(10) // basis HP på level 1
+{
 }
+
 int Hero::maximumXP() const {
-    return level*1000;
+    return level * 1000;
 }
 
-int Hero::gainXP(int _addedXP){
+void Hero::gainXP(int _addedXP) {
     xp += _addedXP;
     while (xp >= maximumXP()) {
         xp -= maximumXP();
         level++;
+        // Hvis du ønsker at HP skal følge level up:
+        // currentHP = 10 + (level - 1) * 2;
     }
 }
 
-int Hero::getHP()
-{
-    level*2;
-}
 
-//Jeg har ikke lige forstået hvordan jeg skal beregne HP :( når level stiger.

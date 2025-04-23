@@ -1,8 +1,8 @@
 #include "Opponent.h"
 
 
-    Opponent::Opponent(int _attack, int _hp)
-        : attack(_attack), originalHP(_hp), currentHP(_hp) {}
+Opponent::Opponent(int _attack, int _hp)
+    : attack(_attack), currentHP(_hp) {}
 
     bool Opponent::isDead() const {
         return currentHP <= 0;
