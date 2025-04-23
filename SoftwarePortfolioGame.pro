@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Hero.cpp \
         Opponent.cpp \
         main.cpp
 
 HEADERS += \
+    Hero.h \
     Opponent.h
