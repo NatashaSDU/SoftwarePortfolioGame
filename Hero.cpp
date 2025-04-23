@@ -15,5 +15,8 @@ void Hero::gainXP(int _addedXP) {
         // currentHP = 10 + (level - 1) * 2;
     }
 }
-
+int Hero::maximumXP() const
+{
+    return level*1000;
+}
 

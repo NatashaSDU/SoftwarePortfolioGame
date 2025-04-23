@@ -8,11 +8,10 @@ private:
     const std::string name;
     int level;
     int xp;
+     int maximumXP() const;
+
 public:
     Hero(const std::string& _name, int _level, int _xp);
-
-    int maximumXP() const{return level*1000;}
-
-    void gainXP(int _addedXP);
+   void gainXP(int _addedXP);
 };
 #endif // HERO_H
