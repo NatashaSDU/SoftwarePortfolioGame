@@ -10,8 +10,12 @@ public:
     Opponent(int _attack, int _hp);
     void damage(int damage);
     bool isDead() const;
-    int getAttack() const;
 
+    int getAttack() const
+    {
+        return attack;
+    }
+   virtual int getXP() const =0;
 };
 
 #endif // OPPONENT_H

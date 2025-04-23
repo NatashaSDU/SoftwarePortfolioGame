@@ -11,7 +11,3 @@ Opponent::Opponent(int _attack, int _hp)
         currentHP-=damage;
     }
 
-    int Opponent::getAttack() const {
-        return attack;
-    }
-

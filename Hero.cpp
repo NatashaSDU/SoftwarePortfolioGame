@@ -3,13 +3,7 @@
 Hero::Hero(const std::string& _name, int _level, int _xp): Opponent(2+_level, (10 + (_level - 1) * 2)),
     name(_name),
     level(_level),
-    xp(_xp),
-    baseHP(10) // basis HP på level 1
-{
-}
-
-int Hero::maximumXP() const {
-    return level * 1000;
+    xp(_xp){
 }
 
 void Hero::gainXP(int _addedXP) {
