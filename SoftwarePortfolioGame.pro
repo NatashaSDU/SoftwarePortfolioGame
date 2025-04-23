@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Opponent.cpp \
         main.cpp
+
+HEADERS += \
+    Opponent.h
