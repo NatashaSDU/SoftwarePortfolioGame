@@ -14,8 +14,9 @@ SOURCES += \
 HEADERS += \
     DataAccess.h \
     Enemy.h \
+    GameController.h \
     Hero.h \
     Opponent.h \
     RequestInput.h \
-    StateParent.h \
+    State.h \
     StateRetreatOffer.h

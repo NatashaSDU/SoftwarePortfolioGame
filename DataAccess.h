@@ -3,16 +3,15 @@
 #include "Hero.h"
 #include <vector>
 #include <string>
-#include <iostream>
 
-class DataAcess{
+class DataAccess{
  private:
-    static std::vector<Hero> heroes;
+     std::vector<Hero> heroes;
 
  public:
-static void AddHero(const Hero& _hero);
-static void UpdateHero(Hero& _hero);
-static Hero LoadCopiedHero(const std::string& name);
-static bool IsNameAvailable(std::string& _name);
+ void AddHero(const Hero& _hero);
+ void UpdateHero(Hero& _hero);
+ Hero LoadCopiedHero(const std::string& name);
+ bool IsNameAvailable(std::string& _name);
 };
 #endif // DATAACCESS_H

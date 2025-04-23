@@ -8,6 +8,7 @@ private:
 
 public:
     Opponent(int _attack, int _hp);
+      virtual ~Opponent() = default;
     void damage(int damage);
     bool isDead() const;
 

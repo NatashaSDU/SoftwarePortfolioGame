@@ -1,13 +1,14 @@
 #include "DataAccess.h"
+#include <stdexcept>
 
-std::vector<Hero> DataAcess::heroes;
 
-void DataAcess::AddHero(const Hero& _hero)
+
+void DataAccess::AddHero(const Hero& _hero)
 {
     heroes.push_back(_hero);
 }
 
-void DataAcess::UpdateHero(Hero& _hero)
+void DataAccess::UpdateHero(Hero& _hero)
 {
     for (auto& currentHero : heroes) {
         if (currentHero.GetName() == _hero.GetName()) {
@@ -17,7 +18,7 @@ void DataAcess::UpdateHero(Hero& _hero)
     }
 }
 
-Hero DataAcess::LoadCopiedHero(const std::string& name) {
+Hero DataAccess::LoadCopiedHero(const std::string& name) {
     for (const auto& h :heroes) {
         if (h.GetName() == name) {
             return h;
@@ -26,7 +27,7 @@ Hero DataAcess::LoadCopiedHero(const std::string& name) {
     throw std::runtime_error("Helten findes ikke");
 }
 
-bool DataAcess::IsNameAvailable(std::string& _name){
+bool DataAccess::IsNameAvailable(std::string& _name){
     for (const auto& h :heroes) {
         if (h.GetName() == _name) {
             return false;

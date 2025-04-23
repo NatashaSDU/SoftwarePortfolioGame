@@ -1,8 +1,9 @@
 #ifndef STATERETREATOFFER_H
 #define STATERETREATOFFER_H
-#include "StateParent.h"
+#include "State.h"
 class StateRetreatOffer: public StateParent{
 
+public:
 
 };
 
