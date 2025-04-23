@@ -17,4 +17,5 @@ HEADERS += \
     Hero.h \
     Opponent.h \
     StateParent.h \
+    StateRetreatOffer.h \
     Utility.h
