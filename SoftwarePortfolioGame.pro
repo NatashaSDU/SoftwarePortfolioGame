@@ -8,7 +8,7 @@ SOURCES += \
         Enemy.cpp \
         Hero.cpp \
         Opponent.cpp \
-        Utility.cpp \
+        RequestInput.cpp \
         main.cpp
 
 HEADERS += \
@@ -16,6 +16,6 @@ HEADERS += \
     Enemy.h \
     Hero.h \
     Opponent.h \
+    RequestInput.h \
     StateParent.h \
-    StateRetreatOffer.h \
-    Utility.h
+    StateRetreatOffer.h
