@@ -15,7 +15,7 @@ public:
     {
         return attack;
     }
-   virtual int getXP() const =0;
+   virtual int GetXP() const =0;
 };
 
 #endif // OPPONENT_H

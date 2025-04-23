@@ -10,7 +10,7 @@ public:
 private:
     int xp;
 
-    int getXP() const override {
+    int GetXP() const  {
         return xp;
     }
 
