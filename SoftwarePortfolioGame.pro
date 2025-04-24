@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         DataAccess.cpp \
         Enemy.cpp \
+        GameController.cpp \
         Hero.cpp \
         Opponent.cpp \
         RequestInput.cpp \

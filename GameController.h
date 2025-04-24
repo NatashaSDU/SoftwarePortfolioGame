@@ -8,12 +8,15 @@ class GameController
 {
 public:
     GameController(Hero& _hero);
-    void ChangeState(State& _state);
+    void ChangeState(State* _state);
  //   void GameIsOver();
 
 private:
   //  bool isGameOn=true;
      DataAccess dataAccess;
+     State* currentState;
+     Hero& hero;
+     void StartGame();
 };
 
 #endif // GAMECONTROLLER_H
