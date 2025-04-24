@@ -8,6 +8,7 @@ SOURCES += \
         Enemy.cpp \
         GameController.cpp \
         Hero.cpp \
+        HeroProvider.cpp \
         Opponent.cpp \
         RequestInput.cpp \
         StateFight.cpp \
@@ -20,6 +21,7 @@ HEADERS += \
     Enemy.h \
     GameController.h \
     Hero.h \
+    HeroProvider.h \
     Opponent.h \
     RequestInput.h \
     State.h \

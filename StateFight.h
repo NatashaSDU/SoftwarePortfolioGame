@@ -5,8 +5,8 @@
 #include "Opponent.h"
 #include "State.h"
 #include "GameController.h"
-#include "StateRetreatOffer.h"
 
+class StateRetreatOffer;
 class StateFight: public State{
 
 

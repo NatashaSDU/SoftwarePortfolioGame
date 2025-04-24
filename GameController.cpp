@@ -4,7 +4,7 @@
 
 
 
-GameController::GameController(Hero& _hero):hero(_hero), enemies{
+GameController::GameController(DataAccess& data,Hero* _hero):hero(_hero), dataAccess(data) ,enemies{
           Enemy("Hest", 4, 1, 100),
           Enemy("Strong Goblin", 8, 3, 400),
           Enemy("Abe Kongen", 30, 5, 1000),
