@@ -2,7 +2,7 @@
 
 
 Opponent::Opponent(int _attack, int _hp)
-    : attack(_attack), currentHP(_hp) {}
+    : attack(_attack), currentHP(_hp), originalHP(_hp) {}
 
     bool Opponent::isDead() const {
         return currentHP <= 0;

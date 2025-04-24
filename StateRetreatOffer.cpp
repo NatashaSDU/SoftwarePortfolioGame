@@ -8,18 +8,12 @@ StateRetreatOffer::StateRetreatOffer()
 
     switch(selected) {
     case 0:
-        // code block
+        context->ChangeState(std::make_shared<StateFightOptions>());
         break;
-    case 1:
-        // code block
-        break;
+
     default:
-         break;
+        context->Save();
     }
 
 }
 
- void StateRetreatOffer::ContinueAdvendure()
-{
-     context->ChangeState(std::make_shared<StateFightOptions>());
-}

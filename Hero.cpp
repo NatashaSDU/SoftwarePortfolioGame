@@ -1,5 +1,8 @@
 #include "Hero.h"
 
+
+
+
 Hero::Hero(const std::string& _name, int _level=1, int _xp=0): Opponent(2+_level, (10 + (_level - 1) * 2)),
     name(_name),
     level(_level),
@@ -19,5 +22,10 @@ void Hero::gainXP(int _addedXP) {
 int Hero::maximumXP() const
 {
     return level*1000;
+}
+
+void Hero::GetDescription() const
+{
+     std::cout << name << " har " << originalHP << " HP er level " << GetLevel()<< " og har " << xp<< " XP" << std::endl;
 }
 

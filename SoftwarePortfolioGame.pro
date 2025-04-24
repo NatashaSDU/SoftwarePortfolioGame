@@ -10,6 +10,8 @@ SOURCES += \
         Hero.cpp \
         Opponent.cpp \
         RequestInput.cpp \
+        StateFight.cpp \
+        StateFightOptions.cpp \
         StateRetreatOffer.cpp \
         main.cpp
 
@@ -21,5 +23,6 @@ HEADERS += \
     Opponent.h \
     RequestInput.h \
     State.h \
+    StateFight.h \
     StateFightOptions.h \
     StateRetreatOffer.h

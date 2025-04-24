@@ -2,6 +2,8 @@
 #define HERO_H
 #include "Opponent.h"
 #include <string>
+#include <ostream>
+#include <iostream>
 
 class Hero : public Opponent {
 private:
@@ -22,6 +24,7 @@ public:
    int GetXP() const override {
      return  xp;
    }
+   void GetDescription()const override;
 
 
 

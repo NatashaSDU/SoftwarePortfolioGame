@@ -12,8 +12,7 @@ class StateRetreatOffer: public State{
 public:
 
     StateRetreatOffer();
-private:
-    void ContinueAdvendure();
+
 };
 
 
