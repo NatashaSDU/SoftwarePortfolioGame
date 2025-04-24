@@ -13,15 +13,17 @@ GameController::GameController(Hero& _hero):hero(_hero), enemies{
     StartGame();
 }
 
-void GameController::ChangeState(std::unique_ptr<State> _state)
+void GameController::ChangeState(std::shared_ptr<State> _state)
 {
-    currentState=std::move(_state);
+    currentState=_state;
+    currentState->SetContext(this);
 }
 
 
 void GameController::StartGame()
 {
     currentState=std::make_unique<StateRetreatOffer>();
+     currentState->SetContext(this);
 }
 
 void GameController::RegisterVictory(int _xp){

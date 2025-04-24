@@ -12,7 +12,7 @@ class GameController
 {
 public:
     GameController(Hero& _hero);
-    void ChangeState(std::unique_ptr<State> _state);
+    void ChangeState(std::shared_ptr<State> _state);
     void RegisterVictory(int _xp);
     Opponent& GetHero();
     void Save();
@@ -21,7 +21,7 @@ public:
 private:
   //  bool isGameOn=true;
      DataAccess dataAccess;
-     std::unique_ptr<State> currentState;
+       std::shared_ptr<State> currentState;
      Hero& hero;
      void StartGame();
      const std::vector<Enemy>& GetEnemies() const;
