@@ -1,7 +1,7 @@
 #include "RequestInput.h"
 #include <iostream>
 
-RequestInput::RequestInput() : currentIndex(1) {}
+RequestInput::RequestInput() : currentIndex(0) {}
 
 RequestInput& RequestInput::getInstance(const std::string& promptText) {
     static RequestInput instance;
