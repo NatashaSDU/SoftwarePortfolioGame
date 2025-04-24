@@ -3,18 +3,18 @@
 
 RequestInput::RequestInput() : currentIndex(0) {}
 
-RequestInput& RequestInput::getInstance(const std::string& promptText) {
+RequestInput& RequestInput::GetInstance(const std::string& promptText) {
     static RequestInput instance;
-    instance.reset(promptText);
+    instance.Reset(promptText);
     return instance;
 }
 
-RequestInput& RequestInput::addOption(const std::string& description) {
+RequestInput& RequestInput::AddOption(const std::string& description) {
     options[currentIndex++] = description;
     return *this;
 }
 
-int RequestInput::ask() const {
+int RequestInput::SelectedValue() const {
     int input;
     while (true) {
         std::cout << prompt << std::endl;
@@ -33,12 +33,12 @@ int RequestInput::ask() const {
     }
 }
 
-std::string RequestInput::getDescription(int value) const {
+std::string RequestInput::GetDescription(int value) const {
     if (options.count(value)) return options.at(value);
     return "";
 }
 
-void RequestInput::reset(const std::string& newPrompt) {
+void RequestInput::Reset(const std::string& newPrompt) {
     options.clear();
     currentIndex = 1;
     prompt = newPrompt;

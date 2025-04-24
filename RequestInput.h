@@ -8,16 +8,16 @@
 
 class RequestInput {
 public:
-    static RequestInput& getInstance(const std::string& promptText);
+    static RequestInput& GetInstance(const std::string& promptText);
 
-    RequestInput& addOption(const std::string& description);
-    int ask() const;
-    std::string getDescription(int value) const;
+    RequestInput& AddOption(const std::string& description);
+    int SelectedValue() const;
+    std::string GetDescription(int value) const;
 
 private:
     RequestInput();
 
-    void reset(const std::string& newPrompt);
+    void Reset(const std::string& newPrompt);
 
     std::map<int, std::string> options;
     std::string prompt;

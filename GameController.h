@@ -6,6 +6,7 @@
 #include "DataAccess.h"
 #include "Opponent.h"
 #include <memory>
+#include "RequestInput.h"
 
 class GameController
 {
@@ -23,7 +24,8 @@ private:
      std::unique_ptr<State> currentState;
      Hero& hero;
      void StartGame();
-     std::vector<Enemy> GetEnemies();
+     const std::vector<Enemy>& GetEnemies() const;
+     std::vector<Enemy> enemies;
 
 
 };

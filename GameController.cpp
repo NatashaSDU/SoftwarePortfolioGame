@@ -2,7 +2,14 @@
 #include "StateRetreatOffer.h"
 
 
-GameController::GameController(Hero& _hero):hero(_hero){
+
+
+GameController::GameController(Hero& _hero):hero(_hero), enemies{
+          Enemy("Hest", 4, 1, 100),
+          Enemy("Strong Goblin", 8, 3, 400),
+          Enemy("Abe Kongen", 30, 5, 1000),
+          Enemy("Drage", 100, 10, 3000)
+      } {
     StartGame();
 }
 
@@ -30,19 +37,17 @@ void GameController::Save()
     dataAccess.UpdateHero(hero);
 }
 
-Opponent& GameController::SelectEnemy(){
+Opponent& GameController::SelectEnemy() {
+    auto& input = RequestInput::GetInstance("Vælg en fjende at bekæmpe");
 
+    for (const auto& enemy : enemies) {
+        input.AddOption(enemy.GetName());
+    }
 
+    int selected = input.SelectedValue();
+    return enemies[selected];
 }
 
- std::vector<Enemy> GameController::GetEnemies()
-{
-
-    return std::vector<Enemy> enemies = {
-               Enemy("Hest", 4, 1, 100 ),
-               Enemy("Strong Goblin", 4, 1, 100 ),
-               Enemy("Hest", 4, 1, 100 ),
-               Enemy("Hest", 4, 1, 100 )
-
-           };
+const std::vector<Enemy>& GameController::GetEnemies() const {
+    return enemies;
 }
