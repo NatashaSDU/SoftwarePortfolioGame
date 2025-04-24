@@ -29,3 +29,5 @@ void Hero::GetDescription() const
      std::cout << name << " har " << originalHP << " HP er level " << GetLevel()<< " og har " << xp<< " XP" << std::endl;
 }
 
+
+

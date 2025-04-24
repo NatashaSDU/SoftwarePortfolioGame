@@ -1,6 +1,7 @@
 #include "Opponent.h"
 
 
+
 Opponent::Opponent(int _attack, int _hp)
     : attack(_attack), currentHP(_hp), originalHP(_hp) {}
 
@@ -11,3 +12,6 @@ Opponent::Opponent(int _attack, int _hp)
         currentHP-=damage;
     }
 
+    void Opponent::GetStatus()const{
+        std::cout << GetName() << " har " << currentHP << " HP tilbage" << std::endl;
+    }

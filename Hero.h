@@ -17,7 +17,7 @@ public:
 
     Hero(const std::string& _name, int _level, int _xp);
    void gainXP(int _addedXP);
-   const std::string& GetName() const { return name; }
+   const std::string& GetName() const override { return name; }
    void SetLevel(int _level){level=_level;}
    void SetXP(int _xp){xp=_xp;}
    int GetLevel()const {return level;}
