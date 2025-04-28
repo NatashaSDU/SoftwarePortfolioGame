@@ -23,6 +23,7 @@ HEADERS += \
     Hero.h \
     HeroProvider.h \
     Opponent.h \
+    ProgramStatus.h \
     RequestInput.h \
     State.h \
     StateFight.h \
