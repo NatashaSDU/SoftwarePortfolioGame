@@ -27,10 +27,10 @@ void GameController::StartGame()
 }
 
 void GameController::RegisterVictory(int _xp){
-    hero.gainXP(_xp);
+    hero->gainXP(_xp);
 }
 
-Opponent& GameController:: GetHero(){
+Opponent* GameController:: GetHero(){
     return hero;
 }
 

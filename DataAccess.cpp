@@ -8,12 +8,12 @@ void DataAccess::AddHero(const Hero& _hero)
     heroes.push_back(_hero);
 }
 
-void DataAccess::UpdateHero(Hero& _hero)
+void DataAccess::UpdateHero(Hero* _hero)
 {
     for (auto& currentHero : heroes) {
-        if (currentHero.GetName() == _hero.GetName()) {
-            currentHero.SetLevel(_hero.GetLevel());
-            currentHero.SetXP(_hero.GetXP());
+        if (currentHero.GetName() == _hero->GetName()) {
+            currentHero.SetLevel(_hero->GetLevel());
+            currentHero.SetXP(_hero->GetXP());
         }
     }
 }

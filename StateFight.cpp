@@ -1,19 +1,20 @@
 #include "StateFight.h"
+#include "StateRetreatOffer.h"
 
 
 StateFight::StateFight(Opponent& enemy) {
-    Opponent& hero= context->GetHero();
-    hero.GetStatus();
+    Opponent* hero= context->GetHero();
+    hero->GetStatus();
     enemy.GetStatus();
 
-    while (!hero.isDead() && !enemy.isDead()) {
-        int heroAttack=hero.getAttack();
+    while (!hero->isDead() && !enemy.isDead()) {
+        int heroAttack=hero->getAttack();
         int enemyAttack=enemy.getAttack();
 
-        hero.damage(enemyAttack);
+        hero->damage(enemyAttack);
         enemy.damage(heroAttack);
 
-        hero.GetStatus();
+        hero->GetStatus();
         enemy.GetStatus();
 
     }
@@ -28,6 +29,6 @@ StateFight::StateFight(Opponent& enemy) {
     {
        std::cout << "Du tabte!" << std::endl;
     }
-    context->ChangeState(std::make_shared<StateRetreatOffer>());
+    context->ChangeState(std::static_pointer_cast<State>(std::make_shared<StateRetreatOffer>()));
 }
 

@@ -6,13 +6,6 @@
 
 using namespace std;
 
-
-
-Hero& LoadHero()
-{
-
-}
-
 int main()
 {
     DataAccess dataAccess;

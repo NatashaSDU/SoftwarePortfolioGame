@@ -10,7 +10,7 @@ class DataAccess{
 
  public:
  void AddHero(const Hero& _hero);
- void UpdateHero(Hero& _hero);
+ void UpdateHero(Hero* _hero);
  Hero LoadCopiedHero(const std::string& name);
  bool IsNameAvailable(std::string& _name);
 };

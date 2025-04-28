@@ -14,7 +14,7 @@ public:
     GameController(DataAccess& data, Hero* _hero);
     void ChangeState(std::shared_ptr<State> _state);
     void RegisterVictory(int _xp);
-    Opponent& GetHero();
+    Opponent* GetHero();
     void Save();
     Opponent& SelectEnemy();
 
