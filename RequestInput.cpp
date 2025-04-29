@@ -22,14 +22,14 @@ int RequestInput::SelectedValue() const {
             std::cout << "  " << key << " - " << desc << std::endl;
         }
 
-        std::cout << "Vælg et tal: ";
+        std::cout << "Select a number: ";
         std::cin >> input;
 
         if (options.find(input) != options.end()) {
             return input;
         }
 
-        std::cout << "Ugyldigt input. Prøv igen." << std::endl;
+        std::cout << "invalid input. Try again." << std::endl;
     }
 }
 

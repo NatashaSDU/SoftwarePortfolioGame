@@ -1,4 +1,5 @@
 #include "GameController.h"
+
 #include "StateRetreatOffer.h"
 
 
@@ -10,20 +11,35 @@ GameController::GameController(DataAccess& data,Hero* _hero):hero(_hero), dataAc
           Enemy("Abe Kongen", 30, 5, 1000),
           Enemy("Drage", 100, 10, 3000)
       } {
+
+
+     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+     {
+          std::cout << "GameController: "<< std::endl;
+        hero->GetDescription();
+     };
+
     StartGame();
+     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+     {
+         std::cout << "Exiting GameController: "<< std::endl;
+     };
 }
 
 void GameController::ChangeState(std::shared_ptr<State> _state)
 {
     currentState=_state;
     currentState->SetContext(this);
+    currentState->OnStart();
 }
 
 
 void GameController::StartGame()
 {
-    currentState=std::make_unique<StateRetreatOffer>();
      currentState->SetContext(this);
+    currentState=std::make_unique<StateRetreatOffer>();
+    currentState->OnStart();
+
 }
 
 void GameController::RegisterVictory(int _xp){
@@ -40,7 +56,7 @@ void GameController::Save()
 }
 
 Opponent& GameController::SelectEnemy() {
-    auto& input = RequestInput::GetInstance("Vælg en fjende at bekæmpe");
+    auto& input = RequestInput::GetInstance("Select an enemy to fight");
 
     for (const auto& enemy : enemies) {
         input.AddOption(enemy.GetName());

@@ -11,7 +11,7 @@ private:
 
 public:
     HeroProvider(DataAccess& access);
-    Hero GetNewHero();
+    Hero MakeNewHero();
     Hero LoadHero();
 
 };

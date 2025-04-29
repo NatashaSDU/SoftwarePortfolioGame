@@ -7,6 +7,8 @@
 #include "Opponent.h"
 #include <memory>
 #include "RequestInput.h"
+#include "ProgramStatus.h"
+#include "ProgramStatusManager.h"
 
 class GameController
 {

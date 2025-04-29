@@ -7,11 +7,6 @@
 
 using namespace std;
 
-static ProgramStatus GetProgramStatus()
-{
-    return ProgramStatus::Development;
-}
-
 int main()
 {
     DataAccess dataAccess;
@@ -24,26 +19,35 @@ int main()
     while(isPlaying)
     {
        Hero* hero = nullptr;
-        auto& input = RequestInput::GetInstance("Ønsker du at:");
+        auto& input = RequestInput::GetInstance("Do you want to:");
 
 
-            input.AddOption("Lave en ny helt")
-            .AddOption("Loade en tidligere helt")
-            .AddOption("Forlade Spillet");
+            input.AddOption("Make new hero")
+            .AddOption("Load a new hero")
+            .AddOption("Leave the game");
 
             switch(input.SelectedValue()) {
-            case 0:
-                hero=new Hero(provider.GetNewHero());
-
+            case 1:
+                if (hero != nullptr) delete hero;
+                hero=new Hero(provider.MakeNewHero());
+                { GameController controller(dataAccess,hero);}
                 break;
 
-            case 1:
+            case 2:
+                if (hero != nullptr) delete hero;
                 hero=new Hero(provider.LoadHero());
+                {
+
+                  GameController controller(dataAccess,hero);
+                }
+                break;
+
             default:
                 isPlaying=false;
+                 break;
             }
 
-            GameController controller(dataAccess,hero);
+
             delete hero;
     }
     return 0;

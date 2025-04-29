@@ -3,6 +3,8 @@
 #include "Hero.h"
 #include <vector>
 #include <string>
+#include "ProgramStatus.h"
+#include "ProgramStatusManager.h"
 
 class DataAccess{
  private:

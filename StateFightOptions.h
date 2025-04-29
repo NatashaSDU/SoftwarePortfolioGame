@@ -11,6 +11,7 @@ class StateFightOptions: public State{
 
 public:
 StateFightOptions();
+    void OnStart();
 };
 
 #endif // STATEFIGHTOPTIONS_H

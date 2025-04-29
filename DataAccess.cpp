@@ -10,6 +10,13 @@ void DataAccess::AddHero(const Hero& _hero)
 
 void DataAccess::UpdateHero(Hero* _hero)
 {
+     if (_hero == nullptr) return;
+
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "DataAccess::UpdateHero"<< std::endl;
+    };
+
     for (auto& currentHero : heroes) {
         if (currentHero.GetName() == _hero->GetName()) {
             currentHero.SetLevel(_hero->GetLevel());
@@ -24,7 +31,7 @@ Hero DataAccess::LoadCopiedHero(const std::string& name) {
             return h;
         }
     }
-    throw std::runtime_error("Helten findes ikke");
+    throw std::runtime_error("Hero doesnt exist");
 }
 
 bool DataAccess::IsNameAvailable(std::string& _name){

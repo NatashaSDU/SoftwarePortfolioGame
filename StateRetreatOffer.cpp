@@ -2,18 +2,39 @@
 
 StateRetreatOffer::StateRetreatOffer()
 {
-   auto& input= RequestInput::GetInstance("Ønsker du at fortsætte spillet?");
-    input.AddOption("Ja").AddOption("Nej");
+
+
+}
+
+void StateRetreatOffer::OnStart(){
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "In StateRetreatOffer"<< std::endl;
+
+    };
+
+    auto& input= RequestInput::GetInstance("Continue playing?");
+    input.AddOption("Yes").AddOption("No");
     int selected = input.SelectedValue();
 
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "You chose: "<<selected<< std::endl;
+    };
+
+
     switch(selected) {
-    case 0:
+    case 1:
         context->ChangeState(std::make_shared<StateFightOptions>());
         break;
 
     default:
+        if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+        {
+            std::cout << "In default"<< std::endl;
+
+        };
         context->Save();
+        break;
     }
-
 }
-

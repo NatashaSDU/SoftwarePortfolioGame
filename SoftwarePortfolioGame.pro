@@ -12,6 +12,7 @@ SOURCES += \
         Opponent.cpp \
         ProgramStatusManager.cpp \
         RequestInput.cpp \
+        State.cpp \
         StateFight.cpp \
         StateFightOptions.cpp \
         StateRetreatOffer.cpp \

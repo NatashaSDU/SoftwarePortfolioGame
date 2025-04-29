@@ -12,6 +12,7 @@ class StateRetreatOffer: public State{
 public:
 
     StateRetreatOffer();
+    void OnStart();
 
 };
 
