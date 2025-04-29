@@ -10,6 +10,7 @@ SOURCES += \
         Hero.cpp \
         HeroProvider.cpp \
         Opponent.cpp \
+        ProgramStatusManager.cpp \
         RequestInput.cpp \
         StateFight.cpp \
         StateFightOptions.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     HeroProvider.h \
     Opponent.h \
     ProgramStatus.h \
+    ProgramStatusManager.h \
     RequestInput.h \
     State.h \
     StateFight.h \

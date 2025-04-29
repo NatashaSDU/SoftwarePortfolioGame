@@ -7,5 +7,4 @@ enum class ProgramStatus
     Release
 };
 
-
 #endif // PROGRAMSTATUS_H

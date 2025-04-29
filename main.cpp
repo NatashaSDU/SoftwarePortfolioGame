@@ -1,10 +1,16 @@
 #include "GameController.h"
 #include "HeroProvider.h"
+#include "ProgramStatus.h"
 #include "StateRetreatOffer.h"
 #include <iostream>
 #include "Hero.h"
 
 using namespace std;
+
+static ProgramStatus GetProgramStatus()
+{
+    return ProgramStatus::Development;
+}
 
 int main()
 {

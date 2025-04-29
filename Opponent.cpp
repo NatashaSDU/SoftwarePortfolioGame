@@ -14,4 +14,6 @@ Opponent::Opponent(int _attack, int _hp)
 
     void Opponent::GetStatus()const{
         std::cout << GetName() << " har " << currentHP << " HP tilbage" << std::endl;
+
+
     }
