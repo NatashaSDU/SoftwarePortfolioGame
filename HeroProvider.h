@@ -2,6 +2,9 @@
 #define HEROPROVIDER_H
 
 #include "DataAccess.h"
+#include "ProgramStatus.h"
+#include "ProgramStatusManager.h"
+
 class HeroProvider {
 private:
     DataAccess& access;
