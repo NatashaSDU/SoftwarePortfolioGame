@@ -5,6 +5,8 @@
 
 #include <string>
 #include <map>
+#include "ProgramStatus.h"
+#include "ProgramStatusManager.h"
 
 class RequestInput {
 public:

@@ -18,12 +18,21 @@ int main()
 
     while(isPlaying)
     {
+
+        if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+        {
+            std::cout << "Main: Printer alle heltene"<< std::endl;
+            dataAccess.PrintAllHeroes();
+
+        };
+
+
        Hero* hero = nullptr;
         auto& input = RequestInput::GetInstance("Do you want to:");
 
 
             input.AddOption("Make new hero")
-            .AddOption("Load a new hero")
+            .AddOption("Load an old hero")
             .AddOption("Leave the game");
 
             switch(input.SelectedValue()) {
@@ -36,6 +45,13 @@ int main()
             case 2:
                 if (hero != nullptr) delete hero;
                 hero=new Hero(provider.LoadHero());
+
+                if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+                {
+                    std::cout << "Case 2: Print helt"<< std::endl;
+                    hero->GetDescription();
+
+                };
                 {
 
                   GameController controller(dataAccess,hero);
@@ -47,8 +63,8 @@ int main()
                  break;
             }
 
-
             delete hero;
+
     }
     return 0;
 }

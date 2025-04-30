@@ -22,7 +22,7 @@ public:
 
 private:
   //  bool isGameOn=true;
-     DataAccess dataAccess;
+     DataAccess& dataAccess;
        std::shared_ptr<State> currentState;
      Hero* hero;
      void StartGame();

@@ -36,8 +36,9 @@ void GameController::ChangeState(std::shared_ptr<State> _state)
 
 void GameController::StartGame()
 {
-     currentState->SetContext(this);
+
     currentState=std::make_unique<StateRetreatOffer>();
+      currentState->SetContext(this);
     currentState->OnStart();
 
 }
@@ -63,7 +64,7 @@ Opponent& GameController::SelectEnemy() {
     }
 
     int selected = input.SelectedValue();
-    return enemies[selected];
+    return enemies[selected-1];
 }
 
 const std::vector<Enemy>& GameController::GetEnemies() const {

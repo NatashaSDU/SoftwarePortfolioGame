@@ -3,9 +3,15 @@
 
 
 
-void DataAccess::AddHero(const Hero& _hero)
+void DataAccess::AddHero(Hero& _hero)
 {
     heroes.push_back(_hero);
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "DataAccess::AddHero, printer alle heltene"<< std::endl;
+       PrintAllHeroes();
+
+    };
 }
 
 void DataAccess::UpdateHero(Hero* _hero)
@@ -16,29 +22,55 @@ void DataAccess::UpdateHero(Hero* _hero)
     {
         std::cout << "DataAccess::UpdateHero"<< std::endl;
     };
-
-    for (auto& currentHero : heroes) {
-        if (currentHero.GetName() == _hero->GetName()) {
-            currentHero.SetLevel(_hero->GetLevel());
-            currentHero.SetXP(_hero->GetXP());
+    if(IsNameInUse(_hero->GetName()))
+    {
+        for (auto& currentHero : heroes) {
+            if (currentHero.GetName() == _hero->GetName()) {
+                currentHero.SetLevel(_hero->GetLevel());
+                currentHero.SetXP(_hero->GetXP());
+            }
         }
+
     }
+    else{
+        AddHero(*_hero);
+    }
+
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "DataAccess::UpdateHero: Printer alle heltene"<< std::endl;
+        PrintAllHeroes();
+
+    };
 }
 
-Hero DataAccess::LoadCopiedHero(const std::string& name) {
-    for (const auto& h :heroes) {
-        if (h.GetName() == name) {
-            return h;
-        }
+Hero DataAccess::LoadCopiedHero() {
+
+    auto& input = RequestInput::GetInstance("Select one of the heroes");
+
+    for (const auto& hero : heroes) {
+        input.AddOption(hero.GetName());
     }
-    throw std::runtime_error("Hero doesnt exist");
+
+    int selected = input.SelectedValue();
+
+
+   return heroes[selected-1];
+
 }
 
-bool DataAccess::IsNameAvailable(std::string& _name){
+bool DataAccess::IsNameInUse(const std::string& _name) const{
     for (const auto& h :heroes) {
         if (h.GetName() == _name) {
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
+}
+
+void DataAccess::PrintAllHeroes() const{
+    for (auto& currentHero : heroes) {
+        currentHero.GetDescription();
+    }
+     std::cout << std::endl;
 }

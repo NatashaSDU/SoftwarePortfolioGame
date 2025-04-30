@@ -6,5 +6,5 @@ Enemy::Enemy(const std::string& _name, int _hp, int _damage, int _xp): Opponent(
 
 void Enemy::GetDescription() const
 {
-    std::cout << name << " har " << originalHP << " HP" << std::endl;
+    std::cout << name << " has " << originalHP << " HP" << std::endl;
 }

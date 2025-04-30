@@ -1,6 +1,7 @@
 #include "HeroProvider.h"
 
 
+
 HeroProvider::HeroProvider(DataAccess& _access): access(_access){
 
 }
@@ -13,12 +14,20 @@ Hero HeroProvider::MakeNewHero()
 
      std::string name;
     do {
-        std::cout << "Enter name of hero: ";
+        std::cout << "Enter name of hero: "<< std::endl;
         std::getline(std::cin, name);
-    } while (!access.IsNameAvailable(name));
+    } while (access.IsNameInUse(name));
 
-    std::cout << "Enter the name of the hero: ";
-    std::getline(std::cin, name);
+
+    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
+    {
+        std::cout << "MakeNewHero: "<< name<< std::endl;
+
+    };
+
+   // std::cout << "Enter the name of the hero: ";
+
+//    std::getline(std::cin, name);
     return Hero(name); // OK: Returnerer som værdi
 }
 Hero HeroProvider::LoadHero(){
@@ -28,12 +37,6 @@ Hero HeroProvider::LoadHero(){
         std::cout << "In LoadHero"<< std::endl;
     };
 
-    std::string name;
 
-    do {
-        std::cout << "Enter 1 to continue, 0 for at afslutte: ";
-        std::getline(std::cin, name);
-    } while (access.IsNameAvailable(name));
-
-    return Hero(access.LoadCopiedHero(name));
+    return Hero(access.LoadCopiedHero());
 }

@@ -25,7 +25,7 @@ void StateFight::OnStart(){
 
         hero->GetStatus();
         enemy.GetStatus();
-
+        std::cout << std::endl;
     }
 
     if(enemy.isDead())
@@ -38,6 +38,7 @@ void StateFight::OnStart(){
     {
         std::cout << "You lost!" << std::endl;
     }
+       std::cout << std::endl;
     context->ChangeState(std::static_pointer_cast<State>(std::make_shared<StateRetreatOffer>()));
 }
 

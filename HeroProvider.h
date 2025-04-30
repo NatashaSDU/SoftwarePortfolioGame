@@ -4,6 +4,7 @@
 #include "DataAccess.h"
 #include "ProgramStatus.h"
 #include "ProgramStatusManager.h"
+#include <limits>
 
 class HeroProvider {
 private:

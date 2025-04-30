@@ -5,15 +5,17 @@
 #include <string>
 #include "ProgramStatus.h"
 #include "ProgramStatusManager.h"
+#include "RequestInput.h"
 
 class DataAccess{
  private:
      std::vector<Hero> heroes;
 
  public:
- void AddHero(const Hero& _hero);
+ void AddHero(Hero& _hero);
  void UpdateHero(Hero* _hero);
- Hero LoadCopiedHero(const std::string& name);
- bool IsNameAvailable(std::string& _name);
+ Hero LoadCopiedHero();
+ bool IsNameInUse(const std::string& _name) const;
+ void PrintAllHeroes() const;
 };
 #endif // DATAACCESS_H

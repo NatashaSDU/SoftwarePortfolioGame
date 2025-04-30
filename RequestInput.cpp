@@ -1,11 +1,13 @@
 #include "RequestInput.h"
 #include <iostream>
 
+
 RequestInput::RequestInput() : currentIndex(0) {}
 
 RequestInput& RequestInput::GetInstance(const std::string& promptText) {
     static RequestInput instance;
     instance.Reset(promptText);
+
     return instance;
 }
 
@@ -15,7 +17,9 @@ RequestInput& RequestInput::AddOption(const std::string& description) {
 }
 
 int RequestInput::SelectedValue() const {
+    std::string line;
     int input;
+
     while (true) {
         std::cout << prompt << std::endl;
         for (const auto& [key, desc] : options) {
@@ -23,7 +27,14 @@ int RequestInput::SelectedValue() const {
         }
 
         std::cout << "Select a number: ";
-        std::cin >> input;
+        std::getline(std::cin, line); // Læs hele linjen som tekst
+
+        try {
+            input = std::stoi(line); // Prøv at konvertere til int
+        } catch (...) {
+            std::cout << "invalid input. Try again." << std::endl;
+            continue;
+        }
 
         if (options.find(input) != options.end()) {
             return input;
@@ -32,6 +43,7 @@ int RequestInput::SelectedValue() const {
         std::cout << "invalid input. Try again." << std::endl;
     }
 }
+
 
 std::string RequestInput::GetDescription(int value) const {
     if (options.count(value)) return options.at(value);
