@@ -11,6 +11,7 @@ public:
     Enemy(const std::string& _name, int _hp, int _damage, int _xp);
     const std::string& GetName() const { return name; };
     void GetDescription()const override;
+    Opponent* Clone() const override;
 
 private:
     int xp;

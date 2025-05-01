@@ -25,7 +25,7 @@ public:
      return  xp;
    }
    void GetDescription()const override;
-
+ Opponent* Clone() const override;
 
 
 };

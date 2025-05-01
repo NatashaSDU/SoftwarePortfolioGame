@@ -56,16 +56,16 @@ void GameController::Save()
     dataAccess.UpdateHero(hero);
 }
 
-Opponent& GameController::SelectEnemy() {
-    auto& input = RequestInput::GetInstance("Select an enemy to fight");
-
+Opponent* GameController::SelectEnemy() {
+     auto& input = RequestInput::GetInstance("Select an enemy to fight");
     for (const auto& enemy : enemies) {
         input.AddOption(enemy.GetName());
     }
-
-    int selected = input.SelectedValue();
-    return enemies[selected-1];
+     int selected = input.SelectedValue();
+      return enemies[selected-1].Clone();
 }
+
+
 
 const std::vector<Enemy>& GameController::GetEnemies() const {
     return enemies;

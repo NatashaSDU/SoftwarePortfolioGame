@@ -33,5 +33,9 @@ void Hero::GetDescription() const
      std::cout << name << " has " << originalHP << " HP, is level " << GetLevel()<< " and has " << xp<< " XP" << std::endl;
 }
 
+Opponent* Hero::Clone() const {
+    return new Hero(*this); // bruger copy constructor
+}
+
 
 

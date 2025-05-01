@@ -11,10 +11,11 @@ class StateFight: public State{
 
 
 public:
-    StateFight(Opponent& _enemy);
+    StateFight(Opponent* _enemy);
+    ~StateFight();
       void OnStart();
 private:
-      Opponent& enemy;
+      Opponent* enemy;
 };
 
 #endif // STATEFIGHT_H

@@ -17,11 +17,6 @@ void StateRetreatOffer::OnStart(){
     input.AddOption("Yes").AddOption("No");
     int selected = input.SelectedValue();
 
-    if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
-    {
-        std::cout << "You chose: "<<selected<< std::endl;
-    };
-
 
     switch(selected) {
     case 1:

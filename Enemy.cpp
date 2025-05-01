@@ -8,3 +8,7 @@ void Enemy::GetDescription() const
 {
     std::cout << name << " has " << originalHP << " HP" << std::endl;
 }
+
+Opponent* Enemy::Clone() const {
+    return new Enemy(*this); // bruger copy constructor
+}

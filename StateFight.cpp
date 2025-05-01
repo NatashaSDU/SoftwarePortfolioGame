@@ -2,9 +2,14 @@
 #include "StateRetreatOffer.h"
 
 
-StateFight::StateFight(Opponent& _enemy): enemy(_enemy) {
+StateFight::StateFight(Opponent* _enemy): enemy(_enemy) {
 
 
+}
+
+StateFight::~StateFight()  {
+    std::cout << "[StateFight Destructor] Cleaning up enemy...\n";
+    delete enemy;
 }
 void StateFight::OnStart(){
     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
@@ -14,23 +19,23 @@ void StateFight::OnStart(){
 
     Opponent* hero= context->GetHero();
     hero->GetStatus();
-    enemy.GetStatus();
+    enemy->GetStatus();
 
-    while (!hero->isDead() && !enemy.isDead()) {
+    while (!hero->isDead() && !enemy->isDead()) {
         int heroAttack=hero->getAttack();
-        int enemyAttack=enemy.getAttack();
+        int enemyAttack=enemy->getAttack();
 
         hero->damage(enemyAttack);
-        enemy.damage(heroAttack);
+        enemy->damage(heroAttack);
 
         hero->GetStatus();
-        enemy.GetStatus();
+        enemy->GetStatus();
         std::cout << std::endl;
     }
 
-    if(enemy.isDead())
+    if(enemy->isDead())
     {
-        context->RegisterVictory(enemy.GetXP());
+        context->RegisterVictory(enemy->GetXP());
         std::cout << "You won!" << std::endl;
 
     }

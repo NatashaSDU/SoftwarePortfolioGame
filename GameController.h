@@ -18,7 +18,7 @@ public:
     void RegisterVictory(int _xp);
     Opponent* GetHero();
     void Save();
-    Opponent& SelectEnemy();
+    Opponent* SelectEnemy();
 
 private:
   //  bool isGameOn=true;

@@ -9,7 +9,7 @@ void StateFightOptions::OnStart() {
         std::cout << "In StateFightOptions" << std::endl;
     }
 
-    Opponent* enemy = new Opponent(context->SelectEnemy());
+    Opponent* enemy = context->SelectEnemy();
     enemy->GetDescription();
     context->ChangeState(std::make_shared<StateFight>(enemy));
 }
