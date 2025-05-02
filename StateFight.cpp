@@ -22,13 +22,14 @@ void StateFight::OnStart(){
     hero->SetHP();
     enemy->SetHP();
 
+  std::cout << std::endl;
     hero->GetStatus();
     enemy->GetStatus();
 
     while (!hero->isDead() && !enemy->isDead()) {
         int heroAttack=hero->GetAttack();
         int enemyAttack=enemy->GetAttack();
-
+ std::cout << std::endl;
         hero->damage(enemyAttack);
         enemy->damage(heroAttack);
 

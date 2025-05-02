@@ -9,7 +9,7 @@ class Enemy : public Opponent {
 
 public:
     Enemy(const std::string& _name, int _hp, int _attack, int _xp);
-    const std::string& GetName() const override { return name; };
+    const std::string& GetName() const override;
     void GetDescription()const override;
     Opponent* Clone() const override;
      int GetHP() const override;

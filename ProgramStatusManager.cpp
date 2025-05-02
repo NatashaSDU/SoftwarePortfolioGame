@@ -1,6 +1,6 @@
 #include "ProgramStatusManager.h"
 
-ProgramStatus ProgramStatusManager::status = ProgramStatus::Development;
+ProgramStatus ProgramStatusManager::status = ProgramStatus::Release;
 
 
 ProgramStatus ProgramStatusManager::GetProgramStatus()

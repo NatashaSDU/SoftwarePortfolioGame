@@ -14,6 +14,7 @@ Hero HeroProvider::MakeNewHero()
 
      std::string name;
     do {
+        std::cout << std::endl;
         std::cout << "Enter name of hero: "<< std::endl;
         std::getline(std::cin, name);
     } while (access.IsNameInUse(name));
@@ -31,7 +32,7 @@ Hero HeroProvider::MakeNewHero()
     return Hero(name); // OK: Returnerer som værdi
 }
 Hero HeroProvider::LoadHero(){
-
+        std::cout << std::endl;
     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
     {
         std::cout << "In LoadHero"<< std::endl;

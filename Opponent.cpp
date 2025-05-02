@@ -11,7 +11,7 @@ Opponent::Opponent() {
     }
 
     void Opponent::GetStatus()const{
-        std::cout << GetName() << " har " << currentHP << " HP tilbage" << std::endl;
+        std::cout << GetName() << " has " << currentHP << " HP remaining" << std::endl;
 
 
     }

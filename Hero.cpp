@@ -10,11 +10,9 @@ void Hero::gainXP(int _addedXP) {
     int currentLevel=level;
 
     xp += _addedXP;
-    while (xp >= maximumXP()) {
-        xp -= maximumXP();
+    while (xp >= GetMaximumXP()) {
+        xp -= GetMaximumXP();
         level++;
-        // Hvis du ønsker at HP skal følge level up:
-        // currentHP = 10 + (level - 1) * 2;
     }
     if(currentLevel<level)
     {
@@ -23,7 +21,15 @@ void Hero::gainXP(int _addedXP) {
     }
 }
 
-int Hero::maximumXP() const
+ void Hero::SetXP(int _xp){xp=_xp;}
+
+  int Hero::GetLevel()const {return level;}
+
+const std::string& Hero::GetName() const { return name; }
+
+ void Hero::SetLevel(int _level){level=_level;}
+
+int Hero::GetMaximumXP() const
 {
     return level*1000;
 }

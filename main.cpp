@@ -11,7 +11,6 @@ int main()
 {
     DataAccess dataAccess;
     HeroProvider provider(dataAccess);
-    cout << "Hello World!" << endl;
 
     bool isPlaying=true;
 

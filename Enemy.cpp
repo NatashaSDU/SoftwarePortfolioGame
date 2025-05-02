@@ -4,6 +4,8 @@
 Enemy::Enemy(const std::string& _name, int _hp, int _attack, int _xp):  xp(_xp), hp(_hp), attack(_attack), name(_name){
 }
 
+ const std::string& Enemy::GetName() const { return name; }
+
 void Enemy::GetDescription() const
 {
     std::cout << name << " has " << GetHP() << " HP" << std::endl;

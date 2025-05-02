@@ -25,12 +25,12 @@ int RequestInput::SelectedValue() const {
         for (const auto& [key, desc] : options) {
             std::cout << "  " << key << " - " << desc << std::endl;
         }
-
+         std::cout << std::endl;
         std::cout << "Select a number: ";
         std::getline(std::cin, line); // Læs hele linjen som tekst
 
         try {
-            input = std::stoi(line); // Prøv at konvertere til int
+            input = std::stoi(line);
         } catch (...) {
             std::cout << "invalid input. Try again." << std::endl;
             continue;

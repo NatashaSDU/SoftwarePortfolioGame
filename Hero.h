@@ -10,17 +10,17 @@ private:
     const std::string name;
     int level;
     int xp;
-     int maximumXP() const;
+   int GetMaximumXP() const;
 
 
 public:
 
      Hero(const std::string& _name, int _level = 1, int _xp = 0);
    void gainXP(int _addedXP);
-   const std::string& GetName() const override { return name; }
-   void SetLevel(int _level){level=_level;}
-   void SetXP(int _xp){xp=_xp;}
-   int GetLevel()const {return level;}
+     const std::string& GetName() const override;
+   void SetLevel(int _level);
+     void SetXP(int _xp);
+   int GetLevel()const;
    int GetXP() const override {
      return  xp;
    }
