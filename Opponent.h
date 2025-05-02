@@ -7,29 +7,26 @@
 
 class Opponent {
 private:
-    int attack;
     int currentHP;
 
 
 public:
-    Opponent(int _attack, int _hp);
+    Opponent();
       virtual ~Opponent() = default;
     void damage(int damage);
     bool isDead() const;
 
-    int getAttack() const
-    {
-        return attack;
-    }
    virtual int GetXP() const =0;
 
+    virtual int GetHP() const =0;
+     virtual int GetAttack() const =0;
 
     virtual void GetDescription()const=0;
        virtual Opponent* Clone() const = 0;
    virtual const std::string& GetName()const=0;
    void GetStatus()const;
-   protected:
-    int originalHP;
+   void SetHP();
+
 };
 
 #endif // OPPONENT_H

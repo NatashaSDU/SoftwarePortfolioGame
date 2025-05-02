@@ -1,10 +1,8 @@
 #include "Opponent.h"
 
+Opponent::Opponent() {
 
-
-Opponent::Opponent(int _attack, int _hp)
-    : attack(_attack), currentHP(_hp), originalHP(_hp) {}
-
+}
     bool Opponent::isDead() const {
         return currentHP <= 0;
     }
@@ -16,4 +14,9 @@ Opponent::Opponent(int _attack, int _hp)
         std::cout << GetName() << " har " << currentHP << " HP tilbage" << std::endl;
 
 
+    }
+
+    void Opponent::SetHP()
+    {
+        currentHP=GetHP();
     }

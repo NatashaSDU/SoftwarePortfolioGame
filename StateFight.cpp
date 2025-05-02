@@ -8,8 +8,8 @@ StateFight::StateFight(Opponent* _enemy): enemy(_enemy) {
 }
 
 StateFight::~StateFight()  {
-    std::cout << "[StateFight Destructor] Cleaning up enemy...\n";
     delete enemy;
+    delete hero;
 }
 void StateFight::OnStart(){
     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
@@ -17,13 +17,17 @@ void StateFight::OnStart(){
         std::cout << "In StateFight"<< std::endl;
     };
 
-    Opponent* hero= context->GetHero();
+    hero=context->GetHero();
+
+    hero->SetHP();
+    enemy->SetHP();
+
     hero->GetStatus();
     enemy->GetStatus();
 
     while (!hero->isDead() && !enemy->isDead()) {
-        int heroAttack=hero->getAttack();
-        int enemyAttack=enemy->getAttack();
+        int heroAttack=hero->GetAttack();
+        int enemyAttack=enemy->GetAttack();
 
         hero->damage(enemyAttack);
         enemy->damage(heroAttack);
@@ -33,7 +37,7 @@ void StateFight::OnStart(){
         std::cout << std::endl;
     }
 
-    if(enemy->isDead())
+    if(!hero->isDead())
     {
         context->RegisterVictory(enemy->GetXP());
         std::cout << "You won!" << std::endl;

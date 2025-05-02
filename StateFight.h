@@ -16,6 +16,7 @@ public:
       void OnStart();
 private:
       Opponent* enemy;
+    Opponent* hero;
 };
 
 #endif // STATEFIGHT_H

@@ -1,6 +1,6 @@
 #include "Hero.h"
 
-Hero::Hero(const std::string& _name, int _level, int _xp): Opponent(2+(_level-1)*1, (10 + (_level - 1) * 2)),
+Hero::Hero(const std::string& _name, int _level, int _xp):
     name(_name),
     level(_level),
     xp(_xp){
@@ -30,12 +30,19 @@ int Hero::maximumXP() const
 
 void Hero::GetDescription() const
 {
-     std::cout << name << " has " << originalHP << " HP, is level " << GetLevel()<< " and has " << xp<< " XP" << std::endl;
+     std::cout << name << " has " << GetHP() << " HP, is level " << GetLevel()<< " and has " << xp<< " XP" << std::endl;
 }
 
 Opponent* Hero::Clone() const {
     return new Hero(*this); // bruger copy constructor
 }
 
+int Hero::GetHP() const {
+    return 10 + (level - 1) * 2;
+}
+
+int Hero::GetAttack() const {
+   return 2+(level-1)*1;
+}
 
 

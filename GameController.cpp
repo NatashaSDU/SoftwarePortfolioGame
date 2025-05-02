@@ -48,7 +48,7 @@ void GameController::RegisterVictory(int _xp){
 }
 
 Opponent* GameController:: GetHero(){
-    return hero;
+    return hero->Clone();
 }
 
 void GameController::Save()

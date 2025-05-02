@@ -27,6 +27,8 @@ public:
    void GetDescription()const override;
  Opponent* Clone() const override;
 
+   int GetHP() const override;
+   int GetAttack() const override;
 
 };
 #endif // HERO_H
