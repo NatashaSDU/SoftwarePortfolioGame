@@ -42,7 +42,7 @@ void StateFight::OnStart(){
     {
         context->RegisterVictory(enemy->GetXP());
         std::cout << "You won!" << std::endl;
-
+        hero->GetDescription();
     }
     else
     {

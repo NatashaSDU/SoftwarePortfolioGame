@@ -12,13 +12,7 @@ GameController::GameController(DataAccess& data,Hero* _hero):dataAccess(data), h
           Enemy("Dragon", 100, 10, 3000)
       } {
 
-
-     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
-     {
-          std::cout << "GameController: "<< std::endl;
-        hero->GetDescription();
-     };
-
+hero->GetDescription();
     StartGame();
      if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
      {
