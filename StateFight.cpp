@@ -1,15 +1,14 @@
 #include "StateFight.h"
-#include "StateRetreatOffer.h"
 
 
-StateFight::StateFight(Opponent* _enemy): enemy(_enemy) {
+
+StateFight::StateFight(Opponent* _hero, Opponent* _enemy): enemy(_enemy), hero(_hero) {
 
 
 }
 
 StateFight::~StateFight()  {
     delete enemy;
-    delete hero;
 }
 void StateFight::OnStart(){
     if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
@@ -46,11 +45,11 @@ void StateFight::OnStart(){
 
         if(context->MoreEnemies())
         {
-            context->ChangeState(std::make_shared<StateFightOptions>());
+            context->ChangeState(std::make_shared<StateFightOptions>(hero));
         }
         else
         {
-            // Videre til Boss Fight!!
+            context->ChangeState(std::make_shared<StateFight>(hero));
         }
     }
     else

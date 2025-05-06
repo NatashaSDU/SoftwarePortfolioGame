@@ -25,6 +25,7 @@ public:
     void DeleteRemainingEnemies();
     bool MoreEnemies();
     void SelectCave();
+    void CaveCompleted();
 
 private:
   //  bool isGameOn=true;

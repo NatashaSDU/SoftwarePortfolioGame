@@ -10,8 +10,11 @@ class StateFightOptions: public State{
 
 
 public:
-StateFightOptions();
+StateFightOptions(Opponent* _hero);
     void OnStart();
+
+private:
+    Opponent* hero;
 };
 
 #endif // STATEFIGHTOPTIONS_H

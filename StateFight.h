@@ -11,7 +11,7 @@ class StateFight: public State{
 
 
 public:
-    StateFight(Opponent* _enemy);
+    StateFight(Opponent* _hero, Opponent* _enemy);
     ~StateFight();
       void OnStart();
 private:

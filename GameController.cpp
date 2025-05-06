@@ -19,7 +19,9 @@ hero->GetDescription();
          std::cout << "Exiting GameController: "<< std::endl;
      };
 }
+void GameController::CaveCompleted(){
 
+}
 void GameController::SelectCave(){
 
 }

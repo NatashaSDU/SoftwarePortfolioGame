@@ -5,7 +5,6 @@ StateBossFight::StateBossFight(Opponent* _hero) : hero(_hero){}
 
 StateBossFight::~StateBossFight()  {
     delete enemy;
-    delete hero;
 
 }
 
@@ -37,6 +36,8 @@ void StateBossFight::OnStart(){
         context->RegisterVictory(enemy->GetXP());
         std::cout << "You won!" << std::endl;
         hero->GetDescription();
+        delete hero;
+         context->ChangeState(std::static_pointer_cast<State>(std::make_shared<StateRetreatOffer>()));
     }
     else
     {
