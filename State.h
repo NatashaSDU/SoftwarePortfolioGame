@@ -3,6 +3,7 @@
 
 #include "ProgramStatus.h"
 #include "ProgramStatusManager.h"
+#include "Opponent.h"
 
 class GameController;
 class State{
@@ -16,6 +17,7 @@ public:
 
   protected:
       GameController* context = nullptr;
+      void GameOver(Opponent* hero);
 
 };
 

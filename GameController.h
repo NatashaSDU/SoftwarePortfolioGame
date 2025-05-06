@@ -22,7 +22,9 @@ public:
     Opponent* SelectEnemy();
     Opponent* GetBoss();
 
-    void DeleteEnemies();
+    void DeleteRemainingEnemies();
+    bool MoreEnemies();
+    void SelectCave();
 
 private:
   //  bool isGameOn=true;

@@ -20,11 +20,17 @@ hero->GetDescription();
      };
 }
 
+void GameController::SelectCave(){
+
+}
 Opponent* GameController::GetBoss(){
     return new Enemy();
 }
+bool GameController::MoreEnemies(){
+    return false;
+}
 
-void GameController::DeleteEnemies(){
+void GameController::DeleteRemainingEnemies(){
 
 }
 void GameController::ChangeState(std::shared_ptr<State> _state)

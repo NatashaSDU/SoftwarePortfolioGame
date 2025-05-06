@@ -43,12 +43,22 @@ void StateFight::OnStart(){
         context->RegisterVictory(enemy->GetXP());
         std::cout << "You won!" << std::endl;
         hero->GetDescription();
+
+        if(context->MoreEnemies())
+        {
+            context->ChangeState(std::make_shared<StateFightOptions>());
+        }
+        else
+        {
+            // Videre til Boss Fight!!
+        }
     }
     else
     {
-        std::cout << "You lost!" << std::endl;
+
+       GameOver(hero);
     }
        std::cout << std::endl;
-    context->ChangeState(std::static_pointer_cast<State>(std::make_shared<StateRetreatOffer>()));
+
 }
 

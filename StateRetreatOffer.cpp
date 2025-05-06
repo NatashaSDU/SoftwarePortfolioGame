@@ -20,6 +20,7 @@ void StateRetreatOffer::OnStart(){
 
     switch(selected) {
     case 1:
+        context->SelectCave();
         context->ChangeState(std::make_shared<StateFightOptions>());
         break;
 
