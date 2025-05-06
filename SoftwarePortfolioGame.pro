@@ -13,6 +13,7 @@ SOURCES += \
         ProgramStatusManager.cpp \
         RequestInput.cpp \
         State.cpp \
+        StateBossFight.cpp \
         StateFight.cpp \
         StateFightOptions.cpp \
         StateRetreatOffer.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     ProgramStatusManager.h \
     RequestInput.h \
     State.h \
+    StateBossFight.h \
     StateFight.h \
     StateFightOptions.h \
     StateRetreatOffer.h

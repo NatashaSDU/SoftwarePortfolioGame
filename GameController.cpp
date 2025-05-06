@@ -20,6 +20,13 @@ hero->GetDescription();
      };
 }
 
+Opponent* GameController::GetBoss(){
+    return new Enemy();
+}
+
+void GameController::DeleteEnemies(){
+
+}
 void GameController::ChangeState(std::shared_ptr<State> _state)
 {
     currentState=_state;
@@ -40,6 +47,7 @@ void GameController::StartGame()
 void GameController::RegisterVictory(int _xp){
     hero->gainXP(_xp);
 }
+
 
 Opponent* GameController:: GetHero(){
     return hero->Clone();

@@ -17,8 +17,12 @@ public:
     void ChangeState(std::shared_ptr<State> _state);
     void RegisterVictory(int _xp);
     Opponent* GetHero();
+
     void Save();
     Opponent* SelectEnemy();
+    Opponent* GetBoss();
+
+    void DeleteEnemies();
 
 private:
   //  bool isGameOn=true;
