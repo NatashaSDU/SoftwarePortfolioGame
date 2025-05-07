@@ -10,7 +10,7 @@ public:
 
 protected:
     int level;
-    virtual std::string& GetName()=0;
+    virtual const std::string& GetName() const=0;
     virtual int GetGold()=0;
   virtual std::vector<Opponent*> GetSelectableEnemies()=0;
     virtual Opponent* GetBoss()=0;
