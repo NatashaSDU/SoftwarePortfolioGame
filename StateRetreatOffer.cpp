@@ -20,11 +20,16 @@ void StateRetreatOffer::OnStart(){
 
     switch(selected) {
     case 1:
-        context->SelectCave();
-        context->ChangeState(std::make_shared<StateFightOptions>(context->GetHero()));
+    {
+        CaveObject* _cave= context->SelectCave();
+        context->ChangeState(std::make_shared<StateFightOptions>(context->GetHero(), _cave));
         break;
+    }
+
+
 
     default:
+    {
         if(ProgramStatusManager::GetProgramStatus() == ProgramStatus::Development)
         {
             std::cout << "In default"<< std::endl;
@@ -32,5 +37,7 @@ void StateRetreatOffer::OnStart(){
         };
         context->Save();
         break;
+    }
+
     }
 }

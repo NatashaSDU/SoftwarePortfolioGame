@@ -1,8 +1,11 @@
 #include "StateFight.h"
+#include "StateBossFight.h"
+#include "StateFightOptions.h"
 
 
 
-StateFight::StateFight(Opponent* _hero, Opponent* _enemy): enemy(_enemy), hero(_hero) {
+
+StateFight::StateFight(Opponent* _hero, Opponent* _enemy, CaveObject*_cave ): enemy(_enemy), hero(_hero),  cave(_cave) {
 
 
 }
@@ -43,19 +46,19 @@ void StateFight::OnStart(){
         std::cout << "You won!" << std::endl;
         hero->GetDescription();
 
-        if(context->MoreEnemies())
+        if(cave->MoreEnemies())
         {
-            context->ChangeState(std::make_shared<StateFightOptions>(hero));
+            context->ChangeState(std::make_shared<StateFightOptions>(hero, cave));
         }
         else
         {
-            context->ChangeState(std::make_shared<StateFight>(hero));
+            context->ChangeState(std::make_shared<StateBossFight>(hero,cave));
         }
     }
     else
     {
 
-       GameOver(hero);
+       GameOver(hero, cave);
     }
        std::cout << std::endl;
 

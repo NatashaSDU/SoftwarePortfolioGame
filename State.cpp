@@ -10,8 +10,8 @@ void State::SetContext(GameController* ctx) {
 }
 
 
-void State::GameOver(Opponent* hero){
-    context->DeleteRemainingEnemies();
+void State::GameOver(Opponent* hero, CaveObject* cave){
+    delete cave;
     delete hero;
 std::cout << "You lost!" << std::endl;
     std::cout << std::endl;

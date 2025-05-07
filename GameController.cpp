@@ -22,18 +22,10 @@ hero->GetDescription();
 void GameController::CaveCompleted(){
 
 }
-void GameController::SelectCave(){
 
-}
-Opponent* GameController::GetBoss(){
-    return new Enemy();
-}
-bool GameController::MoreEnemies(){
-    return false;
-}
 
-void GameController::DeleteRemainingEnemies(){
-
+CaveObject* SelectCave(){
+    return new CaveObject("",0);
 }
 void GameController::ChangeState(std::shared_ptr<State> _state)
 {

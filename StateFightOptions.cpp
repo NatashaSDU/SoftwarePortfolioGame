@@ -1,6 +1,6 @@
 #include "StateFightOptions.h"
 
-StateFightOptions::StateFightOptions(Opponent* _hero):hero(_hero) {
+StateFightOptions::StateFightOptions(Opponent* _hero,  CaveObject* _cave):hero(_hero), cave(_cave) {
 
 
 }
@@ -9,7 +9,7 @@ void StateFightOptions::OnStart() {
         std::cout << "In StateFightOptions" << std::endl;
     }
    std::cout << std::endl;
-    Opponent* enemy = context->SelectEnemy();
-    context->ChangeState(std::make_shared<StateFight>(hero, enemy));
+    Opponent* enemy = cave->SelectEnemy();
+    context->ChangeState(std::make_shared<StateFight>(hero, enemy, cave));
 }
 

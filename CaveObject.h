@@ -1,20 +1,20 @@
-#ifndef CAVE_H
-#define CAVE_H
+#ifndef CAVEOBJECT_H
+#define CAVEOBJECT_H
 
 #include "Opponent.h"
 #include <string>
 #include <vector>
 #include "RequestInput.h"
-class Cave{
+class CaveObject{
 private:
     int gold;
     const std::string& name;
-     std::vector<Opponent*> remainingEnemies;
+    std::vector<Opponent*> remainingEnemies;
     Opponent* boss;
 
 public:
-    Cave(const std::string& _name,int _gold);
-    ~Cave();
+    CaveObject(const std::string& _name,int _gold);
+    ~CaveObject();
     void AddEnemy(Opponent* enemy);
     bool MoreEnemies();
     Opponent* SelectEnemy();
@@ -24,4 +24,4 @@ public:
     const std::string& GetName() const;
 };
 
-#endif // CAVE_H
+#endif // CAVEOBJECT_H

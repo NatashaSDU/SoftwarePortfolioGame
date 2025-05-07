@@ -1,7 +1,7 @@
 #include "StateBossFight.h"
 
 
-StateBossFight::StateBossFight(Opponent* _hero) : hero(_hero){}
+StateBossFight::StateBossFight(Opponent* _hero, CaveObject*_cave ) : hero(_hero), cave(_cave){}
 
 StateBossFight::~StateBossFight()  {
     delete enemy;
@@ -10,7 +10,7 @@ StateBossFight::~StateBossFight()  {
 
 void StateBossFight::OnStart(){
 
-    enemy = context->GetBoss();
+    enemy = cave->GetBoss();
 
     hero->SetHP();
     enemy->SetHP();
@@ -34,6 +34,7 @@ void StateBossFight::OnStart(){
     if(!hero->isDead())
     {
         context->RegisterVictory(enemy->GetXP());
+        context->CaveCompleted();
         std::cout << "You won!" << std::endl;
         hero->GetDescription();
         delete hero;
@@ -42,7 +43,7 @@ void StateBossFight::OnStart(){
     else
     {
 
-        GameOver(hero);
+        GameOver(hero, cave);
 
     }
 

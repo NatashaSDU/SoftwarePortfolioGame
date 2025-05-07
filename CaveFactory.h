@@ -1,15 +1,15 @@
 #ifndef CAVEFACTORY_H
 #define CAVEFACTORY_H
-#include "Cave.h"
+#include "CaveObject.h"
 class CaveFactory{
 public:
     CaveFactory(int _level);
      virtual ~CaveFactory() = default;
-     Cave* GetCave();
+     CaveObject* GetCave();
 
-private: int level;
 
 protected:
+    int level;
     virtual std::string& GetName()=0;
     virtual int GetGold()=0;
   virtual std::vector<Opponent*> GetSelectableEnemies()=0;

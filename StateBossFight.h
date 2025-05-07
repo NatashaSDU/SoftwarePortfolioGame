@@ -10,12 +10,13 @@ class StateBossFight: public State{
 
 
 public:
-    StateBossFight(Opponent* _hero);
+    StateBossFight(Opponent* _hero, CaveObject* _cave );
     ~StateBossFight();
     void OnStart();
 private:
     Opponent* enemy;
     Opponent* hero;
+    CaveObject* cave;
 };
 
 #endif // STATEBOSSFIGHT_H

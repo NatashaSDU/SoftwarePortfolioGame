@@ -4,9 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        Cave.cpp \
-        Cave.cpp \
         CaveFactory.cpp \
+        CaveFactoryBeginner.cpp \
+        CaveObject.cpp \
         DataAccess.cpp \
         Enemy.cpp \
         GameController.cpp \
@@ -23,8 +23,9 @@ SOURCES += \
         main.cpp
 
 HEADERS += \
-    Cave.h \
     CaveFactory.h \
+    CaveFactoryBeginner.h \
+    CaveObject.h \
     DataAccess.h \
     Enemy.h \
     GameController.h \

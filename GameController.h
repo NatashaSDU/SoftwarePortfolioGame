@@ -1,5 +1,6 @@
 #ifndef GAMECONTROLLER_H
 #define GAMECONTROLLER_H
+#include "CaveObject.h"
 #include "Enemy.h"
 #include "Hero.h"
 #include "State.h"
@@ -17,14 +18,10 @@ public:
     void ChangeState(std::shared_ptr<State> _state);
     void RegisterVictory(int _xp);
     Opponent* GetHero();
-
+    CaveObject* SelectCave();
     void Save();
     Opponent* SelectEnemy();
-    Opponent* GetBoss();
 
-    void DeleteRemainingEnemies();
-    bool MoreEnemies();
-    void SelectCave();
     void CaveCompleted();
 
 private:
