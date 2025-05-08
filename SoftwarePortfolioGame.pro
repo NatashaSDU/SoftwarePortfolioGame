@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         CaveFactory.cpp \
         CaveFactoryBeginner.cpp \
+        CaveFactoryDragon.cpp \
         CaveObject.cpp \
         DataAccess.cpp \
         Enemy.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     CaveFactory.h \
     CaveFactoryBeginner.h \
+    CaveFactoryDragon.h \
     CaveObject.h \
     DataAccess.h \
     Enemy.h \

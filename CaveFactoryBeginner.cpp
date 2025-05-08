@@ -8,5 +8,7 @@ const std::string& CaveFactoryBeginner::GetName() const{
 int CaveFactoryBeginner::GetGold(){
     return gold;
 }
-std::vector<Opponent*> CaveFactoryBeginner::GetSelectableEnemies(){}
+std::vector<Opponent*> CaveFactoryBeginner::GetSelectableEnemies(){
+
+}
 Opponent* CaveFactoryBeginner::GetBoss(){}

@@ -7,3 +7,11 @@ CaveObject* CaveFactory::GetCave(){
     cave->SetBoss(GetBoss());
     return cave;
 }
+
+float CaveFactory::GetModifier(){
+    if(level!=1)
+    {
+         return 1+level/100;
+    }
+    return 1;
+}
