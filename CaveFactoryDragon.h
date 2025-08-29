@@ -9,7 +9,7 @@ class CaveFactoryDragon: CaveFactory{
     const std::string& GetName() const override;
     int GetGold() override;
     std::vector<Opponent*> GetSelectableEnemies() override;
-    Opponent* GetBoss() override;
+   
 private:
     const std::string name = "Dragon Cave";
     int gold=100;

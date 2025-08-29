@@ -10,7 +10,6 @@ private:
     int gold;
     const std::string& name;
     std::vector<Opponent*> remainingEnemies;
-    Opponent* boss;
 
 public:
     CaveObject(const std::string& _name,int _gold);
@@ -18,8 +17,8 @@ public:
     void AddEnemy(Opponent* enemy);
     bool MoreEnemies();
     Opponent* SelectEnemy();
-    void SetBoss(Opponent* _boss);
-    Opponent* GetBoss() const;
+   
+    
     int GetGold() const;
     const std::string& GetName() const;
 };

@@ -10,7 +10,10 @@ int CaveFactoryDragon::GetGold(){
     return gold;
 }
 
-Opponent* CaveFactoryDragon::GetBoss(){
-    boss= new Enemy("Dragon", 40*GetModifier(), 50*GetModifier(), 3000);
-    return boss;
+
+std::vector<Opponent*> GetSelectableEnemies() {
+    std::vector<Opponent*> enemies = {
+        new Enemy("Dragon", 40 * GetModifier(), 50 * GetModifier(), 3000),
+    };
+    return enemies;
 }

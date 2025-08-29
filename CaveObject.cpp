@@ -41,13 +41,6 @@ Opponent* CaveObject::SelectEnemy(){
     return selectedEnemy;
 }
 
-void CaveObject::SetBoss(Opponent* _boss){
-    boss=_boss;
-}
-
-Opponent* CaveObject::GetBoss() const{
-    return boss;
-}
 
 
 int CaveObject::GetGold() const{

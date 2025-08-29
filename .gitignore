@@ -80,3 +80,10 @@ CMakeLists.txt.user*
 .rcc/
 .uic/
 /build*/
+
+# Visual Studio cache
+.vs/
+
+# Build directories
+bin/
+obj/
