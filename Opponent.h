@@ -26,7 +26,8 @@ public:
    virtual const std::string& GetName()const=0;
    void GetStatus()const;
    void SetHP();
-
+   
+   virtual void SetAttack() const = 0;
 };
 
 #endif // OPPONENT_H

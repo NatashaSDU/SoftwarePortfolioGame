@@ -9,6 +9,7 @@ public:
     //void VisitEnemy(Opponent* enemy);
 
     virtual ~IModifier() = default;
+    virtual void VisitEnemy(Opponent* enemy) const = 0;
 };
 
 #endif // IMODIFIER_H
